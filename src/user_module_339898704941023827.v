@@ -16,19 +16,33 @@ module user_module_339898704941023827(
   reg [4:0] state = 5'b00000;
   //reg led = 0;
 
-  // XXX: Are we using CA/CC 7seg for TT board?
+  // Wokwi diagrams have a common cathode 7seg module in the template
+  // Assuming we are going to use that on the demo PCB...
   // patterns for common anode wiring
                        //76543210
                        //xGFEDCBA
-  reg[7:0] letter_h = 8'b10001001;
-  reg[7:0] letter_e = 8'b10000110;
-  reg[7:0] letter_l = 8'b11000111;
-  reg[7:0] letter_o = 8'b11000000;
-  reg[7:0] letter_a = 8'b10001000;
-  reg[7:0] letter_s = 8'b10010010;
-  reg[7:0] letter_i = 8'b11001111;
-  reg[7:0] letter_c = 8'b11000110;
-  reg[7:0] letter_blank =  8'b11111111;
+  reg[7:0] letter_h = 8'b01110110;
+  reg[7:0] letter_e = 8'b01111001;
+  reg[7:0] letter_l = 8'b00111000;
+  reg[7:0] letter_o = 8'b00111111;
+  reg[7:0] letter_a = 8'b01110111;
+  reg[7:0] letter_s = 8'b01101101;
+  reg[7:0] letter_i = 8'b00110000;
+  reg[7:0] letter_c = 8'b00111001;
+  reg[7:0] letter_blank =  8'b00000000;
+
+  // patterns for common anode wiring
+                       //76543210
+                       //xGFEDCBA
+  //reg[7:0] letter_h = 8'b10001001;
+  //reg[7:0] letter_e = 8'b10000110;
+  //reg[7:0] letter_l = 8'b11000111;
+  //reg[7:0] letter_o = 8'b11000000;
+  //reg[7:0] letter_a = 8'b10001000;
+  //reg[7:0] letter_s = 8'b10010010;
+  //reg[7:0] letter_i = 8'b11001111;
+  //reg[7:0] letter_c = 8'b11000110;
+  //reg[7:0] letter_blank =  8'b11111111;
   
   reg [7:0] led_out = 0;
   
